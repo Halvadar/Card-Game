@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/Card-Game/static/js/main.ef6a8153.chunk.js",
+    "main.js.map": "/Card-Game/static/js/main.ef6a8153.chunk.js.map",
+    "runtime-main.js": "/Card-Game/static/js/runtime-main.fe4c1155.js",
+    "runtime-main.js.map": "/Card-Game/static/js/runtime-main.fe4c1155.js.map",
+    "static/js/2.ace9d970.chunk.js": "/Card-Game/static/js/2.ace9d970.chunk.js",
+    "static/js/2.ace9d970.chunk.js.map": "/Card-Game/static/js/2.ace9d970.chunk.js.map",
+    "static/js/3.30099071.chunk.js": "/Card-Game/static/js/3.30099071.chunk.js",
+    "static/js/3.30099071.chunk.js.map": "/Card-Game/static/js/3.30099071.chunk.js.map",
+    "index.html": "/Card-Game/index.html",
+    "static/js/2.ace9d970.chunk.js.LICENSE.txt": "/Card-Game/static/js/2.ace9d970.chunk.js.LICENSE.txt",
+    "static/media/Arrow.5b0512cf.svg": "/Card-Game/static/media/Arrow.5b0512cf.svg",
+    "static/media/Konoha.8438ae9d.svg": "/Card-Game/static/media/Konoha.8438ae9d.svg",
+    "static/media/Loading.abac6ad2.svg": "/Card-Game/static/media/Loading.abac6ad2.svg",
+    "static/media/Menu.de21b81a.svg": "/Card-Game/static/media/Menu.de21b81a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe4c1155.js",
+    "static/js/2.ace9d970.chunk.js",
+    "static/js/main.ef6a8153.chunk.js"
+  ]
+}
