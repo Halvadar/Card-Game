@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Loading from "../public/Loading.svg";
+import LoadingBar from "./LoadingBar";
 const CardsContainer = styled.div`
   padding: 4px;
   margin-top: 20px;
@@ -60,7 +61,14 @@ const Cards = (props) => {
   return (
     <>
       {props.loading ? (
-        <LoadingImg srcProp={Loading}></LoadingImg>
+        props.imageLoadingProgress !== props.progressLength ? (
+          <LoadingBar
+            currentProgress={props.imageLoadingProgress}
+            progressLength={props.progressLength}
+          ></LoadingBar>
+        ) : (
+          <LoadingImg srcProp={Loading} />
+        )
       ) : (
         !props.started && (
           <Start onClick={() => props.start()}>

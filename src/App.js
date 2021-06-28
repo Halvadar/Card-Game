@@ -13,6 +13,7 @@ import BurgerNav from "./components/BurgerNav";
 import WindowInfo from "./components/WindowInfo";
 import Loading from "./public/Loading.svg";
 import { LoadingImg } from "./components/Cards";
+import LoadingBar from "./components/LoadingBar";
 import { cardImageInitializer, scoreCalculator } from "./functions";
 const firebaseConfig = {
   apiKey: "AIzaSyDNSZ31RYwTbdfVar02zwZAtBzc2OYfGxo",
@@ -95,6 +96,7 @@ function App() {
   const [imageLoaded, setImageLoaded] = useState(
     Array.from({ length: 12 }, () => false)
   );
+  const [imageLoadingProgress, setImageLoadingProgress] = useState(0);
   const [loading, setLoading] = useState(true);
   const [loginLoading, setLoginLoading] = useState(true);
   const [dataInitialized, setDataInitialized] = useState(false);
@@ -205,6 +207,16 @@ function App() {
     };
   }, []);
   useEffect(() => {
+    let currentProgress = 1;
+    if (dataInitialized) {
+      currentProgress += 1;
+    }
+    imageLoaded.forEach((image) => {
+      if (image) {
+        currentProgress++;
+      }
+    });
+    setImageLoadingProgress(currentProgress);
     if (!imageLoaded.includes(false) && dataInitialized) {
       setLoading(false);
     }
@@ -242,6 +254,7 @@ function App() {
 
       setLoading(true);
       setDataInitialized(false);
+      setImageLoaded(Array.from({ length: 12 }, () => false));
       cardImageInitializer(
         setCardImageUrls,
         setCardStates,
@@ -395,9 +408,11 @@ function App() {
         errorFunction(err.message);
       });
   };
+
   return (
     <MainContainer>
       {generalError.length > 0 && <GeneralError>{generalError}</GeneralError>}
+
       {!loginLoading ? (
         loggedIn ? (
           <>
@@ -423,6 +438,8 @@ function App() {
               start={start}
               started={started}
               loading={loading || saving}
+              progressLength={14}
+              imageLoadingProgress={imageLoadingProgress}
             >
               {dataInitialized &&
                 cardStates.map((card, index) => {

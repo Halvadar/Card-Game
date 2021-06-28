@@ -53,7 +53,7 @@ const StyledFrontImage = styled.img.attrs((props) => ({
   height: 100%;
 
   object-fit: cover;
-  object-position: center;
+  object-position: 50% 20%;
 `;
 
 const Card = ({
